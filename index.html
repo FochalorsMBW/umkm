@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buah Segar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #f4f4f4, #d4d4d4);
+            color: #333;
+        }
+
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('./aset/bg.png') no-repeat center center fixed;
+            background-size: cover;
+            filter: blur(10px);
+            z-index: -1;
+        }
+
+        header {
+            background: linear-gradient(135deg, #11ade6, #1f8c25);
+            color: white;
+            height: auto;
+            padding: 60px 0;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            animation: fadeIn 2s ease-in-out;
+        }
+        header p {
+            font-size: 1.2em;
+            margin-top: 10px;
+            animation: fadeIn 3s ease-in-out;
+        }
+
+        header a{
+            text-decoration: none;
+            color: white;
+            background-color: #e68d1180;
+            padding: 10px;
+            border-radius: 7px;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        header a:hover{
+            background-color: #e66d11;
+        }
+        
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .produk {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+        .produk-item {
+            text-align: center;
+            width: 30%;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            opacity: 0;
+            animation: fadeIn 1s ease-in-out forwards;
+        }
+        .produk-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+        .produk-item img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .produk-item h3 {
+            margin-top: 15px;
+            color: #4CAF50;
+        }
+        .produk-item p {
+            font-size: 0.9em;
+            color: #666;
+        }
+        .produk-item .harga {
+            font-size: 1.2em;
+            color: #333;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .cta {
+            text-align: center;
+            margin-top: 50px;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #11ade6, #1f8c25);
+            border-radius: 10px;
+            color: white;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta h2 {
+            margin: 0;
+            font-size: 2em;
+            animation: fadeIn 2s ease-in-out;
+        }
+        .cta p {
+            font-size: 1.2em;
+            margin-top: 10px;
+            animation: fadeIn 3s ease-in-out;
+        }
+        .cta button {
+            background: white;
+            color: #4CAF50;
+            border: none;
+            padding: 15px 30px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease-in-out, color 0.2s ease-in-out;
+        }
+        .cta button:hover {
+            background: linear-gradient(135deg, #d1d93a, #0db974);
+            color: white;
+        }
+        .cta a{
+            text-decoration: none;
+            cursor: pointer;
+            background: white;
+            color: #4CAF50;
+            border: none;
+            padding: 15px 30px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease-in-out, color 0.2s ease-in-out;
+        }
+        .cta a:hover{
+            background: linear-gradient(135deg, #ff5e00, #f8ad00);
+            color: white;
+        }
+
+        
+
+        footer {
+            background: linear-gradient(135deg, #d1d93a, #1e8094);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 50px;
+            box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
+            flex-shrink: 0;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="background"></div>
+    <header>
+        <h1>Buah Segar D'exter</h1>
+        <p>Dapatkan buah-buahan segar langsung dari petani lokal!</p>
+        <p><a href="produk.html">Produk</a></p>
+    </header>
+    <h1 style="color: white; text-align: center;">Produk Unggulan</h1>
+    <div class="container">
+        <div class="produk" id="produkList">
+            <div class="produk-item">
+                <img src="./aset/apel.jpg" alt="Apel Segar">
+                <h3>Apel Segar</h3>
+                <p>Apel merah segar langsung dari kebun.</p>
+            </div>
+            <div class="produk-item">
+                <img src="./aset/pisang.jpg" alt="Pisang Matang">
+                <h3>Pisang Matang</h3>
+                <p>Pisang manis dan siap santap.</p>
+            </div>
+            <div class="produk-item">
+                <img src="./aset/jeruk.jpg" alt="Jeruk Manis">
+                <h3>Jeruk Manis</h3>
+                <p>Jeruk segar dengan rasa manis alami.</p>
+            </div>
+        </div>
+
+        <div class="cta">
+            <h2>Pesan Sekarang!</h2>
+            <p>Dapatkan buah segar berkualitas dengan harga terjangkau. Hubungi kami atau pesan langsung melalui tombol di bawah.</p>
+            <button>Hubungi Kami</button>
+        </div>
+        <div class="cta" style="background: linear-gradient(135deg,#cf591a ,#ca9c12);">
+            <h2>Daftar Produk</h2>
+            <p>Buah segar dipetik langsung dari kebun D'exter.</p>
+            <a href="produk.html">Produk Kami</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Buah Segar D'exter Fruit. Semua hak dilindungi.</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const items = document.querySelectorAll('.produk-item');
+            items.forEach((item, index) => {
+                item.style.animationDelay = `${index * 0.5}s`;
+            });
+        });
+    </script>
+</body>
+</html>

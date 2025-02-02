@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Buah - UMKM Kami</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #f4f4f4, #d4d4d4);
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Minimum height of the viewport */
+        }
+
+        body.dark-mode {
+            background: linear-gradient(135deg,s #333, #222);
+            color: #f4f4f4;
+        }
+
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('./aset/bg.png') no-repeat center center fixed;
+            background-size: cover;
+            filter: blur(10px);
+            z-index: -1;
+        }
+
+        header {
+            background: linear-gradient(135deg, #11ade6, #1f8c25);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+
+        body.dark-mode header{
+            background: #222;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        header a {
+            text-decoration: none;
+            color: white;
+            background-color: #11ade680;
+            padding: 10px;
+            border-radius: 7px;
+            transition: background-color 0.3s ease-in-out;
+            animation: fadeIn 2s ease-in-out forwards;
+        }
+
+        header a:hover {
+            background-color: #11ade6;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .toggle-switch {
+            margin-top: 20px;
+            position: relative;
+            width: 60px;
+            height: 30px;
+            background: #ccc;
+            border-radius: 30px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .toggle-switch .toggle-circle {
+            position: absolute;
+            top: 2px;
+            width: 26px;
+            height: 26px;
+            background: white;
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+        }
+
+        .toggle-switch .icon {
+            font-size: 1.2em;
+            color: white;
+            z-index: 1;
+        }
+
+        body.dark-mode .toggle-switch {
+            background: #555;
+        }
+
+        body.dark-mode .toggle-switch .toggle-circle {
+            transform: translateX(30px);
+        }
+
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            flex: 1; /* Take up remaining space */
+            display: flex;
+            flex-direction: column;
+        }
+
+        body.dark-mode .container {
+            background: #444;
+        }
+
+        .search-box {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .search-box input {
+            padding: 10px;
+            width: 60%;
+            border: 1px solid #8e8e8e;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .buah-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .buah-item {
+            text-align: center;
+            width: 200px;
+            opacity: 0;
+            padding: 15px;
+            background: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: fadeIn 1s ease-in-out forwards; /* Animation settings */
+        }
+
+        body.dark-mode .buah-item {
+            background: #222;
+            color: #eee;
+        }
+
+        body.dark-mode .buah-item p{
+            color: #ffffff;
+        }
+
+        body.dark-mode .buah-item .harga{
+            color: #ffffff;
+        }
+
+        .buah-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .buah-item img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .buah-item h3 {
+            margin: 10px 0;
+            color: #4CAF50;
+        }
+
+        .buah-item p {
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        .buah-item .harga {
+            font-size: 1.1em;
+            color: #333;
+            font-weight: bold;
+        }
+
+        footer {
+            background: linear-gradient(135deg, #d1d93a, #1e8094);
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 30px;
+            box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
+            flex-shrink: 0; /* Prevent shrinking */
+        }
+
+    </style>
+</head>
+<body>
+<div class="background"></div>
+    <header>
+        <h1>Daftar Buah Segar</h1>
+        <p><a href="index.html">Beranda</a></p>
+        <div class="toggle-switch" id="toggleDarkMode">
+            <div class="toggle-circle"></div>
+        </div>
+    </header>
+
+
+    <div class="container" id="mainContent">
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Cari nama buah..." oninput="cariBuah()">
+        </div>
+        <div class="buah-list" id="buahList">
+            <!-- Daftar buah akan diisi oleh JavaScript -->
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Buah Segar D'exter. Semua hak dilindungi.</p>
+    </footer>
+
+    <script>
+    const buahData = [
+        { nama: "Apel", gambar: "./aset/appleic.png", deskripsi: "Apel merah segar langsung dari kebun.", harga: "Rp 25.000/kg" },
+        { nama: "Pisang", gambar: "./aset/bananaic.png", deskripsi: "Pisang manis dan siap santap.", harga: "Rp 15.000/sisir" },
+        { nama: "Jeruk", gambar: "./aset/orangeic.png", deskripsi: "Jeruk segar dengan rasa manis alami.", harga: "Rp 20.000/kg" },
+        { nama: "Mangga", gambar: "./aset/mangoic.png", deskripsi: "Mangga harum manis khas Sijunjung.", harga: "Rp 30.000/kg" },
+        { nama: "Anggur", gambar: "./aset/grapeic.png", deskripsi: "Anggur impor dengan kualitas premium.", harga: "Rp 20.000/tangkai" },
+        { nama: "Semangka", gambar: "./aset/watermelonic.png", deskripsi: "Semangka segar dan berair.", harga: "Rp 10.000/buah" },
+        { nama: "Durian", gambar: "./aset/durianic.png", deskripsi: "Durian raja musang.", harga: "Rp 15.000/buah" },
+        { nama: "Rambutan", gambar: "./aset/rambutanic.png", deskripsi: "Rambutan dari binjai.", harga: "Rp 10.000/kg" },
+        { nama: "Buah Naga", gambar: "./aset/dragon-fruitic.png", deskripsi: "Buah naga super.", harga: "Rp 120.000/kg" },
+        { nama: "Pepaya", gambar: "./aset/papayaic.png", deskripsi: "Pepaya segar melepas dahaga.", harga: "Rp 17.000/buah" },
+        { nama: "Nanas", gambar: "./aset/pineappleic.png", deskripsi: "Nanas manis, asam dan gurih.", harga: "Rp 12.000/buah" },
+        { nama: "Manggis", gambar: "./aset/mangosteenic.png", deskripsi: "Manggis manis anti-exhaustes.", harga: "Rp 30.000/kg" },
+        { nama: "Stroberi", gambar: "./aset/strawberryic.png", deskripsi: "Stroberi asli Australi.", harga: "Rp 35.000/kg" },
+        { nama: "Salak", gambar: "./aset/salakic.png", deskripsi: "Salak asli Lombok.", harga: "Rp 30.000/kg" },
+        { nama: "Alpukat", gambar: "./aset/avocadoic.png", deskripsi: "Alpukat dari Mexico.", harga: "Rp 30.000/kg" },
+    ];
+    
+    // Fungsi untuk menampilkan daftar buah
+    function tampilkanBuah(buah) {
+        const buahList = document.getElementById('buahList');
+        buahList.innerHTML = '';
+    
+        buah.forEach(item => {
+            const buahItem = document.createElement('div');
+            buahItem.className = 'buah-item';
+            buahItem.innerHTML = `
+                <img src="${item.gambar}" alt="${item.nama}">
+                <h3>${item.nama}</h3>
+                <p>${item.deskripsi}</p>
+                <div class="harga">${item.harga}</div>
+            `;
+            buahList.appendChild(buahItem);
+        });
+    
+        const items = document.querySelectorAll('.buah-item');
+        items.forEach((item, index) => {
+            item.style.animationDelay = `${index * 0.2}s`;
+        });
+    }
+
+    function cariBuah() {
+        const input = document.getElementById('searchInput').value.toLowerCase();
+        const hasilPencarian = buahData.filter(item => item.nama.toLowerCase().includes(input));
+        tampilkanBuah(hasilPencarian);
+    }
+    
+    tampilkanBuah(buahData);
+    
+    document.addEventListener("DOMContentLoaded", function() {
+        const items = document.querySelectorAll('.buah-item');
+        items.forEach((item, index) => {
+            item.style.animationDelay = `${index * 0.5}s`;
+        });
+    });
+
+    const toggleDarkMode = document.getElementById('toggleDarkMode');
+
+    toggleDarkMode.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    });
+</script>    
+</body>
+</html>
