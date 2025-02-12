@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tentang - D'exter Fruit</title>
+    <link href="./node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('./aset/bg.png') no-repeat center center fixed;
+            background-size: cover;
+            filter: blur(10px);
+            z-index: -1;
+        }
+
+        footer {
+            background: linear-gradient(135deg, #d1d93a, #1e8094);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 50px;
+            box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
+            flex-shrink: 0;
+        }
+
+        .produk-item,
+        nav,
+        .cta,
+        h1,
+        footer {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: fadeIn 1s ease-in-out forwards;
+        }
+
+        .produk-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .read-more-content {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="background"></div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+        <div class="container-fluid">
+            <a class="navbar-brand " href="#"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav text-center d-flex mx-auto fadeIn">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="index.html">Beranda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="produk.html">Produk</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="tentang.html">Tentang</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <br>
+    <h1 class="text-center text-white">Tentang</h1><br>
+    <div class="container mt-10 w-50 h-50">
+        <div class="row g-4">
+            <div class="col-md-4 produk-item">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <h3 class="card-title text-primary">HTML</h3>
+                        <p class="card-text">Vanilla</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 produk-item">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <h3 class="card-title text-warning">CSS</h3>
+                        <p class="card-text">Vanilla<br>Bootstrap</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 produk-item">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <h3 class="card-title text-danger">JS</h3>
+                        <p class="card-text">Vanilla<br>Bootstrap</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cta mt-5">
+            <h2><strong>Latar Belakang</strong></h2>
+            <p style="text-align: justify;"> <strong>D'Exter Fruit adalah UMKM yang berfokus pada buah-buahan segar dan
+                    berkualitas
+                    tinggi.</strong></p>
+            <div>
+                <span class="read-more-content" style="text-align: justify;">
+                    <p> D'exter Fruit
+                        berdiri
+                        dengan tekad dan semangat untuk memberikan pengalaman berbelanja buah yang mudah, menyenangkan,
+                        dan
+                        terpercaya
+                        bagi
+                        seluruh pelanggan. Dengan komitmen untuk menjaga kualitas produk, D'exter Fruit selalu
+                        memastikan
+                        buah-buahan yang ditawarkan dipetik langsung dari kebun terbaik dan diproses dengan standar
+                        kebersihan yang tinggi.</p>
+                    <p> Proses pengembangan website ini didorong oleh keresahan masyarakat di sekitar desa D'exter
+                        tidak
+                        dapat menjual buahnya sendiri karena harga tawarnya yang mahal akibat susahnya akses dan
+                        transportasi. Oleh karena itu, Disini D'exter Fruit bekerjasama dengan banyak mitra usaha di
+                        sekitar desa D'exter untuk
+                        mempermudah mereka untuk menjual buahnya secara online. </p>
+                </span>
+            </div>
+            <a href="javascript:void(0);" class="btn btn-outline-light read-more-btn">Selengkapnya</a>
+        </div>
+
+        <div class="cta mt-5" style="background: linear-gradient(135deg,#cf591a ,#ca9c12);">
+            <h2><strong>Biodata Pengembang</strong></h2>
+            <div>
+                <span class="read-more-content" style="text-align: justify;">
+                    <p>Nama : <strong>Luthfi Al Hakim</strong><br><br>
+                        Kelas : <strong>IF 4</strong><br><br>
+                        Jurusan : <strong>Teknik Informatika</strong><br><br>
+                        NIM : <strong>23101152630143</strong><br><br>
+                        Email : <strong>luthfi@gmail.com</strong><br><br>
+                        Alamat : <strong>Jorong D'exter, Kecamatan D'exter, Kabupaten D'exter, D'exter</strong>
+                    </p>
+                </span>
+            </div>
+            <a href="javascript:void(0);" class="btn btn-outline-light read-more-btn">Selengkapnya</a>
+        </div>
+
+        <div class="cta mt-5" style="background: linear-gradient(135deg,#e83212 ,#bf0211);">
+            <h2>Daftar Produk</h2>
+            <p>Buah segar dipetik langsung dari kebun D'exter.</p>
+            <a href="produk.html" class="btn btn-outline-light">Produk Kami</a>
+        </div>
+    </div>
+
+    <footer class="text-center py-4">
+        <p>&copy; 2025 D'exter Fruit. Semua hak dilindungi.</p>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
